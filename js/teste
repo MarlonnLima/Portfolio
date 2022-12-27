@@ -1,0 +1,110 @@
+let btnHamburguer = document.querySelector('.container-hamburguer')
+let tagUl = document.querySelector('.container-links-menu')
+let button = document.querySelector('.button')
+let aside = document.querySelector('aside')
+let main = document.querySelector('main')
+let header = document.querySelector('header')
+let footer = document.querySelector('footer')
+let menuBar = document.querySelector('.container-links-menu')
+let about = document.querySelector('#about')
+let anything = document.querySelector('#anything')
+let linkAbout = document.querySelector('#link-about');
+let linkProjects = document.querySelector('#link-projects');
+let linkContact = document.querySelector('#link-contact');
+let linhaHamburguer1 = document.querySelector('#hamb-1')
+let linhaHamburguer2 = document.querySelector('#hamb-2')
+let linhaHamburguer3 = document.querySelector('#hamb-3')
+
+
+btnHamburguer.addEventListener('click', () =>{
+   if (tagUl.classList.contains('scroll-menu')){
+
+        tagUl.classList.toggle('scroll-menu-sair')
+        tagUl.classList.remove('scroll-menu')
+        AnimateHamb();
+    }else{
+    tagUl.classList.remove('scroll-menu-sair')
+    tagUl.classList.add('scroll-menu')
+    AnimateHamb();
+}
+})
+
+function AnimateHamb(){
+
+    if(tagUl.classList.contains('scroll-menu')){
+        linhaHamburguer2.classList.remove('animationTransformXReverse')
+        linhaHamburguer3.classList.remove('animationTransformX2Reverse')
+        linhaHamburguer2.classList.add('animationTransformX')
+        linhaHamburguer3.classList.add('animationTransformX2')
+        linhaHamburguer1.classList.add('invisible')
+
+    }else{
+        linhaHamburguer2.classList.add('animationTransformXReverse')
+        linhaHamburguer3.classList.add('animationTransformX2Reverse')
+        linhaHamburguer2.classList.remove('animationTransformX')
+        linhaHamburguer3.classList.remove('animationTransformX2')
+        setTimeout(()=>{linhaHamburguer1.classList.remove('invisible')}, 350)
+
+    }
+}
+
+function themeSwitch(){
+    aside.classList.toggle('light-mode-medio')
+    main.classList.toggle('light-mode-claro')
+    header.classList.toggle('light-mode-escuro')
+    footer.classList.toggle('light-mode-escuro')
+    menuBar.classList.toggle('light-mode-menu')
+    about.classList.toggle('light-mode-escuro')
+    anything.classList.toggle('light-mode-escuro')
+}
+
+function toggleButton(){
+
+
+    if(button.classList.contains('button-right')){
+        button.classList.toggle('button-left')
+        button.classList.toggle('button-right')
+        themeSwitch()
+        
+
+    }else if(button.classList.contains('button-left')){
+        button.classList.toggle('button-right')
+        button.classList.toggle('button-left')
+        themeSwitch()
+    }
+    else{
+        button.classList.toggle('button-right')
+        themeSwitch()
+    }
+  }
+
+window.addEventListener('scroll', ()=>{
+    if (tagUl.classList.contains('scroll-menu')){
+
+        tagUl.classList.toggle('scroll-menu-sair')
+        tagUl.classList.remove('scroll-menu')
+        AnimateHamb();
+    }
+}
+)
+
+function menuScrollAnimation(){
+    tagUl.classList.remove('scroll-menu')
+    tagUl.classList.add('scroll-menu-sair')
+}
+
+linkAbout.addEventListener('click', ()=>{
+    menuScrollAnimation()
+    AnimateHamb();
+})
+
+linkProjects.addEventListener('click', ()=>{
+    menuScrollAnimation()
+    AnimateHamb();
+})
+
+linkContact.addEventListener('click', ()=>{
+    menuScrollAnimation()
+    AnimateHamb();
+})
+
