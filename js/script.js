@@ -1,3 +1,4 @@
+
 // variaveis botão hamburguer
 let menu = document.querySelector('.menu')
 let span = document.querySelector('span')
@@ -21,33 +22,33 @@ let experience = document.querySelector('#experience')
 let seta = document.querySelector('svg')
 let card1 = document.querySelector('#card1')
 let card2 = document.querySelector('#card2')
-let card3 = document.querySelector('#card3') 
+let card3 = document.querySelector('#card3')
 
 //Mexer botão
 
 menu.addEventListener('click', AnimateHamb)
 
-function AnimateHamb(){
+function AnimateHamb() {
     span.classList.toggle('ativo')
     span.classList.toggle('invisivel')
-        
+
 }
 
 //Scroll Menu Abrir/Fechar
 
-menu.addEventListener('click', () =>{
-    if(span.classList.contains('ativo')){
+menu.addEventListener('click', () => {
+    if (span.classList.contains('ativo')) {
         menuBar.classList.remove('scroll-menu-sair')
         menuBar.classList.add('scroll-menu')
-    }else{
+    } else {
         menuBar.classList.remove('scroll-menu')
         menuBar.classList.add('scroll-menu-sair')
     }
 })
 
 //Se a página scrollar fechar menu
-window.addEventListener('scroll', ()=>{
-    if (menuBar.classList.contains('scroll-menu')){
+window.addEventListener('scroll', () => {
+    if (menuBar.classList.contains('scroll-menu')) {
 
         menuBar.classList.toggle('scroll-menu-sair')
         menuBar.classList.remove('scroll-menu')
@@ -55,64 +56,73 @@ window.addEventListener('scroll', ()=>{
     }
 })
 
-
-
 //Trocar Tema
-function themeSwitch(){
+function themeSwitch() {
     aside.classList.toggle('light-mode-medio')
     main.classList.toggle('light-mode-claro')
     header.classList.toggle('light-mode-escuro')
     footer.classList.toggle('light-mode-escuro')
     menuBar.classList.toggle('light-mode-menu')
-    
-    if(menuBar.classList.contains('light-mode-menu')){
-        containerSwitcher.style.backgroundColor = '#14a5ff'
-        containerSwitcher.style.border = '2px solid #14a5ff'
+
+    if (menuBar.classList.contains('light-mode-menu')) {
         span.style.setProperty('--colorSpan', '#000')
         seta.style.fill = "#000"
 
-    }else{
-        containerSwitcher.style.backgroundColor = '#111'
-        containerSwitcher.style.border = '2px solid #111'
+    } else {
         span.style.setProperty('--colorSpan', '#fff')
         seta.style.fill = "#fff"
 
     }
 
-    if(card1 !== null){
+    if (card1 !== null) {
         card1.classList.toggle('light-mode-medio')
     }
-    if(card2 !== null){
+    if (card2 !== null) {
         card2.classList.toggle('light-mode-medio')
     }
-    if(card3 !== null){
+    if (card3 !== null) {
         card3.classList.toggle('light-mode-medio')
     }
-    if(about !== null){
+    if (about !== null) {
         about.classList.toggle('light-mode-escuro')
     }
-    if(experience !== null){
+    if (experience !== null) {
         experience.classList.toggle('light-mode-escuro')
     }
+
+    
 }
 
-function toggleButton(){
-    if(button.classList.contains('button-right')){
-        button.classList.toggle('button-left')
-        button.classList.toggle('button-right')
-        themeSwitch() 
+if (localStorage.getItem('tema') == undefined) {
+    localStorage.setItem('tema', 'escuro')
+}
 
-    }else if(button.classList.contains('button-left')){
-        button.classList.toggle('button-right')
-        button.classList.toggle('button-left')
-        themeSwitch()
-    }
-    else{
-        button.classList.toggle('button-right')
-        themeSwitch()
-    }
-  }
-  
+if (localStorage.getItem('tema') == 'claro') {
+    button.classList.add('button-right')
+    containerSwitcher.style.backgroundColor = '#14a5ff'
+    containerSwitcher.style.border = '2px solid #14a5ff'
+    themeSwitch();
+} else if (localStorage.getItem('tema') == 'escuro') {
+    button.classList.add('button-left')
+    containerSwitcher.style.backgroundColor = '#111'
+    containerSwitcher.style.border = '2px solid #111'
+}
 
 
-
+function toggleButton() {
+if((localStorage.getItem('tema') == 'claro') && (button.classList.contains('button-right')))  {
+    button.classList.add('button-left')
+    button.classList.remove('button-right')
+    localStorage.setItem('tema', 'escuro')
+    containerSwitcher.style.backgroundColor = '#111'
+    containerSwitcher.style.border = '2px solid #111'
+    themeSwitch()
+}else if((localStorage.getItem('tema') == 'escuro') && (button.classList.contains('button-left')))  {
+    button.classList.add('button-right')
+    button.classList.remove('button-left')
+    localStorage.setItem('tema', 'claro')
+    containerSwitcher.style.backgroundColor = '#14a5ff'
+    containerSwitcher.style.border = '2px solid #14a5ff'
+    themeSwitch()
+}
+}

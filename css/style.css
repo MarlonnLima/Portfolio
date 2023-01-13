@@ -1,6 +1,3 @@
-*{
-  transition: all 0.5s;
-}
 body {
     box-sizing: border-box;
     margin: 0;
@@ -25,7 +22,6 @@ body {
     align-items: center;
     color: #fff;
   }
-  
   main {
     display: flex;
     flex-direction: column;
@@ -140,6 +136,7 @@ body {
     justify-content: center;
     align-items: center;
   }
+
   .container-links-menu {
     background-color: #36393F;
     min-width: 120px;
@@ -148,7 +145,7 @@ body {
     right: -350px;
     width: 15%;
     margin: 0px;
-    height: 90vh;
+    height: 77vh;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -157,6 +154,7 @@ body {
     list-style: none;
     align-items: flex-start;
     z-index: 100;
+    border-bottom-left-radius: 100px;
   }
 
   .scroll-menu{
