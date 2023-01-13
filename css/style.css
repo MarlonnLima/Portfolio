@@ -318,7 +318,19 @@ body {
     height: 80px;
     animation: mexerSeta 2s infinite;
   }
-  
+  .botao-contato{
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #14a0cf;
+    border-radius: 20px;
+    margin: 10px 0px;
+    
+  }
+
+  .margin-zero{
+    margin: 0px;
+  }
   @keyframes moveButtonRight {
   from {
     left: 3px;
