@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="assets/icon.png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Marlon Dev</title>
+</head>
+
+<body>
+  <div>
+    <nav class="centralizar">
+      <ul class="container-links-menu">
+        <li>
+          <div class="flex">
+            <div class="container-button" onclick="toggleButton()">
+              <img class="icon-theme-switcher" src="assets/sun.svg" alt="">
+              <img class="icon-theme-switcher" src="assets/moon.svg" alt="">
+              <div class="button">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a class="link" href="index.html#about" id="link-about">Sobre</a></li>
+        <li><a class="link" href="projetos.html#projetos" id="link-projects">Projetos</a></li>
+        <li><a class="link" href="contatos.html#contatos" id="link-contact">Contatos</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="grid-container">
+
+    <header>
+      <div class="menu">
+        <span></span>
+      </div>
+    </header>
+
+    <main>
+      <section id="projetos">
+        <div class="card" id="card1">
+          <img src="assets/primeflix.JPG"></img>
+          <h3>PrimeFlix</h3>
+          <p>React, Hooks, Router, Axios, AOS e Toastify</p>
+          <a href="https://marlonnlima.github.io/primeflix/" target="_blank"> Clique e veja!</a>
+        </div>
+
+        <div class="card" id="card2">
+          <img src="assets/otica.JPG"></img>
+          <h3>Ótica</h3>
+          <p>Responsivo, React, HTML, CSS e JavaScript</p>
+          <a href="https://marlonnlima.github.io/Otica-Responsiva/" target="_blank"> Clique e veja!</a>
+        </div>
+
+        <div class="card" id="card3">
+          <img src="assets/clinica.JPG"></img>
+          <h3>Clinica</h3>
+          <p>Responsivo, HTML, CSS</p>
+          <a href="https://marlonnlima.github.io/Clinica-Responsiva/" target="_blank"> Clique e veja!</a>
+        </div>
+
+      </section>
+    </main>
+
+    <aside>
+      <img src="assets/marlon.jpg">
+      <h2> Marlon Lima</h2>
+      <p>Desenvolvedor Front-End</p>
+      <nav>
+        <ul class="container-links">
+          <li><a class="link" href="https://www.linkedin.com/in/marlonn-lima/">Meu Linkedin</a></li>
+          <li><a class="link" href="https://github.com/MarlonnLima">Meu GitHub</a></li>
+        </ul>
+      </nav>
+      <svg class="svg-seta" viewBox="0 0 320 512" width="100" title="angle-double-down">
+        <path
+          d="M143 256.3L7 120.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 86.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 192l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z" />
+      </svg>
+    </aside>
+
+    <footer>
+      <p>Por Marlon Lima Gonçalves, Todos os direitos reservados ©</p>
+    </footer>
+
+  </div>
+
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
