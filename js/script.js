@@ -20,9 +20,7 @@ let footer = document.querySelector('footer')
 let about = document.querySelector('#about')
 let experience = document.querySelector('#experience')
 let seta = document.querySelector('svg')
-let card1 = document.querySelector('#card1')
-let card2 = document.querySelector('#card2')
-let card3 = document.querySelector('#card3')
+let cards = document.querySelectorAll('.card');
 
 //Mexer botão
 
@@ -46,15 +44,6 @@ menu.addEventListener('click', () => {
     }
 })
 
-//Se a página scrollar fechar menu
-window.addEventListener('scroll', () => {
-    if (menuBar.classList.contains('scroll-menu')) {
-
-        menuBar.classList.toggle('scroll-menu-sair')
-        menuBar.classList.remove('scroll-menu')
-        AnimateHamb();
-    }
-})
 
 //Trocar Tema
 function themeSwitch() {
@@ -74,15 +63,13 @@ function themeSwitch() {
 
     }
 
-    if (card1 !== null) {
-        card1.classList.toggle('light-mode-medio')
-    }
-    if (card2 !== null) {
-        card2.classList.toggle('light-mode-medio')
-    }
-    if (card3 !== null) {
-        card3.classList.toggle('light-mode-medio')
-    }
+    cards.forEach(card => {
+        if(card !== null){
+            card.classList.toggle('light-mode-medio')
+        }
+    });
+
+
     if (about !== null) {
         about.classList.toggle('light-mode-escuro')
     }
